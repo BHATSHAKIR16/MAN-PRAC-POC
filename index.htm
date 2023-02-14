@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel="stylesheet" type='text/css' media='screen' href='Sarthak/DP/Profile.css'>
+    <link rel = 'stylesheet' type = "text/css" media = 'screen' href = 'poc/style.css'>
+    <script src = 'poc/learningScript.js' defer></script>
+    <script src = 'poc/main1.js' defer></script>
+    <script src='main.js' defer></script>
+    <script src="Sarthak/DP/ProfileService.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <p id ='screenHeading'>Assign Courses</p>
+    </header>
+    <div class="container">
+        <section class="pracContainer">
+            <div class='nav'>
+                <button class="navitems" onclick="displayUtil('none','flex','none','none','Assign Courses');"><img src="assets/Assign Courses(+).svg"></button>
+                <div class='hor-sep'></div>
+                <button class="navitems" onclick="displayUtil('none','none','none','initial','Manage Learning Catalog');"><img src="assets/Manage Learning Catalog.svg"></button>
+                <div class='hor-sep'></div>
+                <button class="navitems" onclick="displayUtil('none','none','initial','none','Project Performance Growth');"><img src="assets/Project Performance Growth​.svg"></button>
+                <div class='hor-sep'></div>
+                <button class="navitems" onclick="displayUtil('initial','none','none','none','Profile');"><img src="assets/Profille.svg"></button>
+            </div>
+            <div class="separator"></div>
+            <div class="praclist">
+                <p>Practitoners</p>
+                <form>
+                    <input type="search" id = 'searchBox' placeholder="search">
+                    <button type='submit'></button>
+                </form>
+                <p class="practitioner">
+
+                </p>
+            </div>
+        </section>
+        <section class="courseContainer">
+            <div class="staffitCourses">
+                <p>Course suggestions based on proposed assignments in STAFFIT</p>
+                <div class="courseHolder">
+                    <div class="courses">
+                        <div class="courseSourceDate">
+                            <p id='courseSource'>Course Source</p>
+                            <p id='datePosted'>Date Posted</p>
+                        </div>
+                        <p id='courseTitle'>Course Title</p>
+                        <p id='courseDesc'>Course Description</p>
+                        <div class="courseInfo">
+                            <div class="singleButton">
+                                <img src="assets/language.svg">
+                                <p id="courseLang">Course language</p>
+                            </div>
+                            <div class="singleButton">
+                                <img src="assets/CPE.svg">
+                                <p id="CPE">CPE credits</p>
+                            </div>
+                            <div class="singleButton">
+                                <img src="assets/duration.svg">
+                                <p id="duration">Duration</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="performanceCourses">
+                <p>Course suggestions based on past project Performance</p>
+                <div class="courseHolderProposed">
+                    <div class="coursesProposed">
+                        <div class="courseSourceDate">
+                            <p id='courseSourceProposed'>Course Source</p>
+                            <p id='datePostedProposed'>Date Posted</p>
+                        </div>
+                        <p id='courseTitleProposed'>Course Title</p>
+                        <p id='courseDescProposed'>Course Description</p>
+                        <div class="courseInfo">
+                            <div class="singleButton">
+                                <img src="assets/language.svg">
+                                <p id="courseLangProposed">Course language</p>
+                            </div>
+                            <div class="singleButton">
+                                <img src="assets/CPE.svg">
+                                <p id="CPEProposed">CPE credits</p>
+                            </div>
+                            <div class="singleButton">
+                                <img src="assets/duration.svg">
+                                <p id="durationProposed">Duration</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <section class = "performanceScreen">
+        <h3>Practitioner data with performance</h3>
+        <div>
+            <div class="container">
+                <table class="table">
+                    <thead>
+                        <tr style="border-bottom:1px solid white;" colspan="4">
+                            <th>Name</th>
+                            <th>Project</th>
+                            <th>Project performance</th>
+                            <th>Overall performance</th>
+                            <th>Skills</th>
+                            <th>More information</th>
+    
+    
+                        </tr>
+                    </thead>
+                    <tbody id="practitioner_data">
+    
+                    </tbody>
+                </table>
+            </div>
+    
+        </div>
+    </section>
+    <section class = "manageLearningScreen">
+        <div>
+            <div class="container">
+                <table class="table">
+                    <thead>
+                        <tr style="border-bottom:1px solid white;" colspan="4">
+                            <th>Select</th>
+                            <th>File_name</th>
+                            <th>Date_modified</th>
+                            <th>Roles_applicable</th>
+    
+                        </tr>
+                    </thead>
+                    <tbody id="learningData">
+    
+                    </tbody>
+                </table>
+            </div>
+    
+        </div>
+        <button id="assignbutton" class="assign_button">Assign</button>
+    </section>
+    <!-- <button class="assign">Assign</button> -->
+
+    <section class="container emp-profile">
+        <form method="post">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="profile-img">
+                        <img src="Sarthak/DP/assets/GettyImages-1363267282_lo.png" alt="" />
+                        <div class="file btn btn-lg btn-primary">
+                            Change Photo
+                            <input type="file" title="Edit Profile" name="file" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="profile-head">
+                        <h5 id="username">
+                            Kshiti Ghelani
+                        </h5>
+                        <h6 id="role">
+                            Web Developer and Designer
+                        </h6>
+                        <h6 id="location">
+                            test
+                        </h6>
+                        <p class="profile-rating">PERFORMANCE RATING : <span id="rating">8/10</span></p>
+                        <p class="about-me">ABOUT ME : <span id="aboutMe">8/10</span></p>
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item" role="tab" aria-controls="home" aria-selected="true">
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home">About</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <input type="submit" title="Edit Profile" class="profile-edit-btn" name="btnAddMore"
+                        value="Edit Profile" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="profile-work">
+                        <p>PAST PROJECTS</p>
+                        <a href="" id="p1">Website Link</a><br />
+                        <a href="" id="p2">Bootsnipp Profile</a><br />
+                        <a href="" id="p3">Bootply Profile</a>
+                        <p>SKILLS</p>
+                        <a href="" id="s1">Web Designer</a><br />
+                        <a href="" id="s2">Web Developer</a><br />
+                        <a href="" id="s3">WordPress</a><br />
+                        <a href="" id="s4">WooCommerce</a><br />
+                        <a href="" id="s5">PHP, .Net</a><br />
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="tab-content profile-tab" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label>User Id</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p id="userId">Kshiti123</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label>Email</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p id="email">kshitighelani@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label>Phone</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p id="phone">123 456 7890</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label>Member Firm</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p id="mf">Test</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label>Global Level</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p id="gl">test</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label>Cost Center</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p id="cc">test</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+     </section>
+    </div>
+</body>
+
+</html>

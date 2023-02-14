@@ -1,0 +1,47 @@
+[
+    {
+    "name":"Test User 1",
+    "role" : "Role 1",
+    "img":"assets/profile1.svg"
+},
+{
+    "name":"Test User 2",
+    "role" : "Role 2",
+    "img":"assets/profile2.svg"
+},
+{
+    "name":"Test User 3",
+    "role" : "Role 3",
+    "img":"assets/profile3.svg"
+},
+{
+    "name":"Test User 1",
+    "role" : "Role 1",
+    "img":"assets/profile1.svg"
+},
+{
+    "name":"Test User 2",
+    "role" : "Role 2",
+    "img":"assets/profile2.svg"
+},
+{
+    "name":"Test User 3",
+    "role" : "Role 3",
+    "img":"assets/profile3.svg"
+},
+{
+    "name":"Test User 1",
+    "role" : "Role 1",
+    "img":"assets/profile1.svg"
+},
+{
+    "name":"Test User 2",
+    "role" : "Role 2",
+    "img":"assets/profile2.svg"
+},
+{
+    "name":"Test User 3",
+    "role" : "Role 3",
+    "img":"assets/profile3.svg"
+}
+]

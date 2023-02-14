@@ -1,0 +1,88 @@
+{
+    "data_practitioner": [
+        {
+            "Name": "test",
+            "Project": "STAFFIT",
+            "Project_performance": "70%",
+            "Overall_performance": "good",
+            "Skills": "Angular"
+        },
+        {
+            "Name": "test",
+            "Project": "STAFFIT",
+            "Project_performance": "70%",
+            "Overall_performance": "good",
+            "Skills": "Angular"
+        },
+        {
+            "Name": "test",
+            "Project": "STAFFIT",
+            "Project_performance": "70%",
+            "Overall_performance": "good",
+            "Skills": "Angular"
+        },
+        {
+            "Name": "test",
+            "Project": "STAFFIT",
+            "Project_performance": "70%",
+            "Overall_performance": "good",
+            "Skills": "Angular"
+        },
+        {
+            "Name": "test",
+            "Project": "STAFFIT",
+            "Project_performance": "70%",
+            "Overall_performance": "good",
+            "Skills": "Angular"
+        },
+        {
+            "Name": "test",
+            "Project": "STAFFIT",
+            "Project_performance": "70%",
+            "Overall_performance": "good",
+            "Skills": "Angular"
+        }
+    ],
+    "data": [
+        {
+            "File_name": "STAFFIT KT",
+            "Date_modified": "30 jan 2023",
+            "roles_applicable": "Functional"
+        },
+        {
+            "File_name": "IRPM KT",
+            "Date_modified": "30 jan 2023",
+            "roles_applicable": "Developer"
+        },
+        {
+            "File_name": "RMUI",
+            "Date_modified": "30 jan 2023",
+            "roles_applicable": "Developer"
+        },
+        {
+            "File_name": "STAFFIT KT",
+            "Date_modified": "30 jan 2023",
+            "roles_applicable": "Developer"
+        },
+        {
+            "File_name": "STAFFIT KT",
+            "Date_modified": "30 jan 2023",
+            "roles_applicable": "QA"
+        },
+        {
+            "File_name": "STAFFIT KT",
+            "Date_modified": "30 jan 2023",
+            "roles_applicable": "Developer"
+        },
+        {
+            "File_name": "STAFFIT KT",
+            "Date_modified": "30 jan 2023",
+            "roles_applicable": "Developer"
+        },
+        {
+            "File_name": "STAFFIT KT",
+            "Date_modified": "30 jan 2023",
+            "roles_applicable": "Developer"
+        }
+    ]
+}
