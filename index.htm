@@ -13,13 +13,15 @@
     <script src = 'poc/main1.js' defer></script>
     <script src='main.js' defer></script>
     <script src="Sarthak/DP/ProfileService.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
 
 <body>
     <header>
         <p id ='screenHeading'>Assign Courses</p>
     </header>
-    <div class="container">
+    <div class="containermain">
         <section class="pracContainer">
             <div class='nav'>
                 <button class="navitems" onclick="displayUtil('none','flex','none','none','Assign Courses');"><img src="assets/Assign Courses(+).svg"></button>
@@ -28,12 +30,12 @@
                 <div class='hor-sep'></div>
                 <button class="navitems" onclick="displayUtil('none','none','initial','none','Project Performance Growth');"><img src="assets/Project Performance Growth​.svg"></button>
                 <div class='hor-sep'></div>
-                <button class="navitems" onclick="displayUtil('initial','none','none','none','Profile');"><img src="assets/Profille.svg"></button>
+                <button class="navitems" onclick="displayUtil('flex','none','none','none','Profile');"><img src="assets/Profille.svg"></button>
             </div>
             <div class="separator"></div>
             <div class="praclist">
                 <p>Practitoners</p>
-                <form>
+                <form class="form-class">
                     <input type="search" id = 'searchBox' placeholder="search">
                     <button type='submit'></button>
                 </form>
@@ -149,7 +151,8 @@
     </section>
     <!-- <button class="assign">Assign</button> -->
 
-    <section class="container emp-profile">
+    <section>
+        <div class="container emp-profile">
         <form method="post">
             <div class="row">
                 <div class="col-md-4">
@@ -180,10 +183,6 @@
                             </li>
                         </ul>
                     </div>
-                </div>
-                <div class="col-md-2">
-                    <input type="submit" title="Edit Profile" class="profile-edit-btn" name="btnAddMore"
-                        value="Edit Profile" />
                 </div>
             </div>
             <div class="row">
@@ -257,6 +256,7 @@
                 </div>
             </div>
         </form>
+        </div>
      </section>
     </div>
 </body>
