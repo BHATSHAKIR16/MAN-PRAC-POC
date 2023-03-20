@@ -1,14 +1,19 @@
 html,body{
     background-color: black !important;
     color:white;
-    /* height: 98%; */
+    height: 99%;
     font-family: 'Open Sans';
-    /* margin: 0 !important; */
-    box-sizing: border-box;
+    margin: 0 !important;
+    padding: 0;
+    box-sizing: border-box !important;
+}
+button{
+    border: none;
 }
 p{
-    margin: 7px 0;
+    margin: 0px !important;
 }
+
 .containermain{
     max-width:99%;
     display: flex;
@@ -48,7 +53,8 @@ header p{
     align-items: baseline;
     justify-content: center;
     max-width: fit-content;
-    gap:10px
+    gap:10px;
+    margin-left: 10px;
 }
 
 .navitems{
@@ -77,20 +83,20 @@ header p{
 }
 .form-class{
     display: flex;
-    /* background-color: #555; */
+    background-color: #555;
     border:1px solid currentColor;
     color:#555;
-    padding:2px;
     border-radius: 5px;
+    margin-bottom:8%;
+    margin-top:2%
 }
-input[type="search"]{
+input[type="text"]{
   border:none;
   background:#555;
   color:white;
   border:1px solid transparent;
   border-radius: inherit;
   margin: 0;
-  padding:3px 0px
 }
 button[type="submit"]{
     background:#555 url("assets/searchVector.svg") no-repeat center;
@@ -99,7 +105,7 @@ button[type="submit"]{
     margin:0;
     padding:10px
 }
-input[type="search"]:focus{
+input[type="text"]:focus{
     outline: none;
 }
 
@@ -127,10 +133,18 @@ input[type="search"]:focus{
     align-items: center;
     gap:5%;
     border-radius: 5px;
+    align-items: center;
+    padding:0;
     /* border-bottom: 1px solid rgba(255, 255, 255, 0.5); */
 }
 .singlePractitioner:hover{
     background-color: rgba(255, 255, 255, 0.12);
+}
+.singlePractitioner:checked{
+    background-color: #008000;
+}
+.pracDef{
+    padding:0.5rem;
 }
 .pracRole{
     color:white;
@@ -149,22 +163,26 @@ input[type="search"]:focus{
 .courseContainer{
     min-width:77%;
     display:flex;
-    gap:20px;
+    /* gap:30px; */
 }
 .staffitCourses,.performanceCourses{
  /* border:4px solid rgba(255, 255, 255, 0.12) */
 }
-.staffitCourses{
+.staffitCourses,.performanceCourses{
     max-width:50%;
     margin-left: 30px;
     max-height: 100%;
+    margin-top:2.5%;
     /* overflow-y: scroll; */
 }
 .courseInfo{
     display:flex;
     align-items:center;
-    justify-content: space-around;
+    justify-content: space-between;
+    margin-bottom:0.4rem;
+    margin-top:1.3rem;
 }
+
 .singleButton{
     display: flex;
     gap:5px
@@ -172,33 +190,89 @@ input[type="search"]:focus{
 .courses,.coursesProposed{
     padding:0 10px;
     font-size: 12px;
-    opacity: 0.7;
     border:5px solid rgba(255, 255, 255, 0.12);
     border-bottom:5px solid rgba(255, 255, 255, 0.12);
     border-top:5px solid rgba(255, 255, 255, 0.12);
+}
+.courses ,.coursesProposed{
+    display: flex;
+    gap: 2%;
+    min-width: 0;
+    padding: 10px 10px;
+}
+.courseDescription{
+    width: 385px;
+    overflow: hidden;
+     text-overflow: ellipsis;
+     display: -webkit-box;
+    -webkit-line-clamp: 3; 
+    -webkit-box-orient: vertical;
+}
+.courseActions{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-right: 12px;
+}
+.courseActions button{
+    background-color: #43B02A;
+    border-radius: 50px;
+    width: 18px;
+    height: 18px;
+}
+.courseActions button:nth-child(2) img{
+    position: relative ;
+    left: -1.1px;
+    top: -1.5px;
+}
+.courseActions button:first-child img{
+    position: relative;
+    top:-1.5px
+}
+.courseActions input[type='checkbox']{
+    padding: 0px;
+    appearance: none;
+    width:16px;
+    height : 16px;
+    border : 1.5px solid #43B02A;
+    border-radius: 20px; 
+}
+.courseActions input[type='checkbox']:checked{
+    background-color: #43B02A;
+    box-shadow: inset 0px 0px 0px 3.4px black;
 }
 .courseHolder,.courseHolderProposed{
     max-height:90%;
     overflow-y: scroll;
 }
 .courseHolder::-webkit-scrollbar, .courseHolderProposed::-webkit-scrollbar{
-    width:15px;
+    width:10px;
 }
 .courseHolder::-webkit-scrollbar-thumb, .courseHolderProposed::-webkit-scrollbar-thumb{
     background-color: green;
-  border-left:10px solid black;
+  /* border-left:10px solid black; */
   border-radius: 20px;
 }
+/* .courseHolder::-webkit-scrollbar-track{
+    color: azure;
+    background-color: #1f1f1f;
+} */
 #datePosted{
     float:right
 }
-#courseTitle{
+.courseDetails{
+    padding-right: 1%;
+}
+.courseTitle{
     font-weight: 500;
     color: white !important;
+    padding-bottom: 8px;
 }
 .courseSourceDate{
     display: flex;
     justify-content: space-between;
+    margin-top: 0.3rem;
+    margin-bottom:0.7rem;
 }
 .assign{
     padding:6px 12px;
@@ -209,4 +283,13 @@ input[type="search"]:focus{
     border:1px solid #019701; 
     float:right;
     margin-right:2%           
+}
+.courseHeading{
+    text-align: center;
+    font-family: 'open sans';
+    font-size: 0.9rem;
+    padding: 5px 0;
+    background: #555555;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }

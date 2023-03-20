@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="loginStyle.css">
+    <script src="JSlogin.js" defer></script>
+    <title>Poc Login Page</title>
+
+</head>
+<body>
+    <!-- <h1>Login Page</h1> -->
+
+    <form action = '../index.htm' id = 'form' method="get">
+        <div class="headingcontiner">
+            <h3>Sign in</h3>
+            <p>Please enter your userId and Password </p>
+        </div>
+        <div class="maincontiner">
+            <!---username-->
+            <label for="username">Username</label>
+            <input type="text" id="uname" placeholder="Enter Username" name="username" required>
+            <br><br>
+
+            <!-- Password -->
+            <label for="pwd">Password</label>
+            <input type="password" id = "upwd" placeholder="Enter Password" name="pwd" required>
+            <br>
+
+          
+
+
+            <!-- Submit button -->
+            <button id="btnlogin" onclick="validateUser()">Login</button>
+
+            <!-- Sign up link -->
+            <!-- <p class="register">Not a member?  <a href="#">Register here!</a></p> -->
+        </div>
+    </form>
+
+    <div class="errorModal" id ='errModal'>
+        <p id = 'errorMessage'>invalid </p>
+    </div>
+</body>
+
+</html>
+
+

@@ -1,26 +1,31 @@
 let pracHolder = document.querySelector('.practitioner')
 let searchBox = document.getElementById('searchBox')
-pracData = []
 courseData = []
 searchBox.addEventListener('input',(event)=>{
    let searchData = event.target.value;
    console.log(searchData);
    filterSearchData(searchData);
 })
-function filterSearchData(searchData){
-    pracData.filter((res)=>{
-      return res.name.toLowerCase().includes(searchData);
-    })
-}
 
 let practitionerData = function () {
+    pracData = []
     fetch('practitionerInfo.json').then(Response =>
         Response.json()).then(data => {
             pracData = data
             console.log(pracData)
-            printPracData();
+            printPracData(pracData);
         })
         
+}
+function filterSearchData(searchData){
+    console.log('triggered')
+  let resultData=[];
+  console.log(searchData)
+  console.log(pracData)
+ resultData=pracData.filter((e)=>e.name.toLowerCase().includes(searchData.toLowerCase())
+ )
+ console.log(resultData)
+ printPracData(resultData)
 }
 let courses = {
     courseData : [],
@@ -53,32 +58,40 @@ let courses = {
     }
 
 }
+let pracList = {
+    singlePractitioner : document.querySelector('.singlePractitioner'),
+    pracImage : document.getElementById('pracImg'),
+    pracName : document.querySelector('.pracName'),
+    pracRole : document.querySelector('.pracRole'),
+    pracUnderline : document.querySelector('.pracUnderline')
+}
 
-printPracData = function(){
-    let output = ''
-    for (let item of pracData) {
-        // let singlePrac=document.createElement('div').setAttribute("class","singlePrac");
-        // // singlePrac.setAttribute("class","singlePrac")
-        // let pracImage=document.createElement('img').setAttribute('src',item.img)
-        // let pracDef1 = document.createElement('div').setAttribute('class','singlePractitioner')
-        // let pracDef=document.createElement('p').innerHTML=item.name
-        // // pracDef1.appendChild(pracDef)
-        // // singlePrac.appendChild(pracImage)
-        // // singlePrac.appendChild(pracDef1)
-        // // pracHolder.appendChild(pracDef)
-        output += `
-    <div class = "singlePractitioner">
-    <img width = '45' height = '45' src = "${item.img}">
-     <div class = "pracDef">
-       <p class = 'pracName'>${item.name}</p>
-       <p class = "pracRole">${item.role}</p>
-     </div>
-    </div>     
-    <div class = "pracUnderline">
-    </div>
-    `;
+function printPracData(arbData){
+    pracHolder.innerHTML=""
+    // let output = ''
+    for (let item of arbData) {
+        pracList.pracImage.src= item.img
+        pracList.pracName.innerHTML=item.name; 
+        pracList.pracRole.innerHTML=item.role;
+        let clonedPrac = pracList.singlePractitioner.cloneNode(true)
+        let clonedUnderline = pracList.pracUnderline.cloneNode(true)
+        pracList.singlePractitioner.remove()
+        pracList.pracUnderline.remove()
+        pracHolder.appendChild(clonedPrac);
+        pracHolder.appendChild(clonedUnderline)
+    //     output += `
+    // <div class = "singlePractitioner">
+    // <img width = '45' height = '45' src = "${item.img}">
+    //  <div class = "pracDef">
+    //    <p class = 'pracName'>${item.name}</p>
+    //    <p class = "pracRole">${item.role}</p>
+    //  </div>
+    // </div>     
+    // <div class = "pracUnderline">
+    // </div>
+    // `;
     
-    pracHolder.innerHTML=output;
+    // pracHolder.innerHTML=output;
     }
     console.log(pracData)
     }
@@ -115,4 +128,7 @@ function displayUtil(empProfile,courseContainer,performanceScreen,manageLearning
     document.querySelector('.performanceScreen').style.display = performanceScreen
     document.querySelector('.manageLearningScreen').style.display = manageLearningScreen
     document.getElementById('screenHeading').innerHTML = screenHeading
+}
+function onPractitionerClick(){
+ pracList.singlePractitioner.style.background='red'
 }

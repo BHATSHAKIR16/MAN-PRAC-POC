@@ -1,0 +1,194 @@
+body {
+  font-family: 'open sans';
+  height: 50vh;
+}
+table {
+    font-family: 'Open Sans';
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed;
+}
+
+td,
+th {
+    font-family: 'Open Sans';
+    text-align: left;
+    padding: 8px;
+    color: white;
+}
+
+
+p {
+    color: white;
+}
+
+.assign_button {
+    margin-top: 50px;
+    float: right;
+    margin-right: 30px;
+    font-family: 'Open Sans';
+}
+
+body {
+    margin: 100px;
+    background-color: black;
+    /* background: -webkit-linear-gradient(to right, #155799, #159957); 
+    background: linear-gradient(to right, #155799, #159957);  */
+    color:whitesmoke;
+}
+
+.viewbtn {
+    background-color: #0076a8;
+    border: 1px solid #0076a8;
+    text-align: center;
+    border-radius: 2px;
+    padding: 5px;
+    font-size: 12px;
+    font-family: 'Open Sans';
+    font-weight: 400;
+    color: white;
+}
+
+h1 {
+    font-size: 24px;
+    color: #91d303;
+    text-align: center;
+    font-family: 'Open Sans';
+
+    line-height: 24px;
+}
+
+h3 {
+    font-size: 20px;
+    color: white;
+    margin-left: 0;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    font-family: 'Open Sans';
+    line-height: 24px;
+    text-align: center;
+}
+/* ----Naveen Kumar --- */
+form{
+    width:35rem;
+    margin: auto;
+    color:#ffff;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgb(63 66 64 / 65%);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    box-shadow: rgb(255 255 255 / 25%) 0px 8px 24px;
+}
+
+.headingcontiner{
+    text-align: center;
+}
+
+.headingcontiner p{
+    color: #ffffffa1;
+    margin: 0px;
+    margin-top: 10px;
+}
+
+.maincontiner{
+    padding: 16px;
+}
+
+.subcontainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.subcontainer a{
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+span.forgotpsd a {
+    float: right;
+    color: whitesmoke;
+    padding-top: 16px;
+  }
+
+.forgotpsd a{
+    color: rgb(74, 146, 235);
+  }
+  
+.forgotpsd a:link{
+    text-decoration: none;
+  }
+
+  .register{
+    color: white;
+    text-align: center;
+  }
+  
+  .register a{
+    color: rgb(74, 146, 235);
+  }
+  
+  .register a:link{
+    text-decoration: none;
+  }
+
+  button {
+    background-color: #91d303;
+    color: white;
+    padding: 13px 20px;
+    border-radius: 5px;
+    margin: 25px 0;
+    width: 100%;
+    font-size: 18px;
+    border: none;
+  }
+
+button:hover {
+    opacity: 0.6;
+    cursor: pointer;
+}
+button[type="submit"] a{
+  text-decoration: none;
+  color: white;
+}
+label{
+  font-family: inherit;
+}
+.errorModal{
+  width: 20vw;
+  /* height: 6vh; */
+  padding: 8px;
+  margin: auto;
+  transform: translate(0vw,10vh);
+  background-color: #b50000;
+  border-radius: 5px;
+  text-align: center;
+  display: none;
+}
+.errorModal p{
+  margin:0
+}
+input[type=text], input[type=password]{
+    width: 100%;
+    margin: 10px 0;
+    border-radius: 5px;
+    padding: 14px 18px;
+    box-sizing: border-box;
+    border: none;
+    }
+    
+    @media screen and (max-width: 600px) {
+        form{
+          width: 25rem;
+        }
+      
+      }
+      
+      @media screen and (max-width: 400px) {
+        form{
+          width: 20rem;
+        }
+      }
+  
