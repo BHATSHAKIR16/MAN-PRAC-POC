@@ -18,7 +18,7 @@ var createTable2 = function(data){
         data.data.forEach((itemData) => {
             temp += "<tr>"
             temp += "<td> <input type='checkbox' name='selectBox'  class='select-row'> </td>";
-            temp += "<td>" + itemData.File_name + "</td>";
+            temp += "<td "+"style='text-align: Left'" +">" + itemData.File_name + "</td>";
             temp += "<td>" + itemData.Date_modified + "</td>";
             temp += "<td>" + itemData.roles_applicable + "</td></tr>";
         });

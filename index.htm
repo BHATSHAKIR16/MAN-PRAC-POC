@@ -131,20 +131,20 @@
             </div>
         </section>
         <section class="performanceScreen">
-            <h3>Practitioner data with performance</h3>
+            <!-- <h3>Practitioner data with performance</h3> -->
             <div>
                 <div class="container">
-                    <table class="table">
+                    <h5 class="PerfMetric">Overall Performance: <span id="OverallPerformance" style="color: white;"></span> 
+                        &emsp;&emsp;&emsp;&emsp; Performance Rating: <span id="OverallPerformanceRating" style="color: white;"></span>
+                    </h5>
+                    <table class="PerformanceTable">
                         <thead>
                             <tr style="border-bottom:1px solid white;" colspan="4">
-                                <th>Name</th>
-                                <th>Project</th>
-                                <th>Project performance</th>
-                                <th>Overall performance</th>
-                                <th>Skills</th>
-                                <th>More information</th>
-
-
+                                <th style="text-align: center;">Project Name</th>
+                                <th style="width: 15%; text-align: center;">Duration</th>
+                                <th style="width: 15%; text-align: center;">Performance</th>
+                                <th style="text-align: center;">Skills</th>
+                                <th style="width: 15%; text-align: center;">More information</th>
                             </tr>
                         </thead>
                         <tbody id="practitioner_data">
@@ -158,14 +158,13 @@
         <section class="manageLearningScreen">
             <div>
                 <div class="container">
-                    <table class="table">
+                    <table class="CatalogTable">
                         <thead>
                             <tr style="border-bottom:1px solid white;" colspan="4">
-                                <th>Select</th>
-                                <th>File_name</th>
-                                <th>Date_modified</th>
-                                <th>Roles_applicable</th>
-
+                                <th style="width: 8%; text-align: center;">Select</th>
+                                <th style="width: 35%; text-align: center;">File Name</th>
+                                <th style="width: 15%; text-align: center;">Date Modified</th>
+                                <th style="width: 30%; text-align: center;">Roles Applicable</th>
                             </tr>
                         </thead>
                         <tbody id="learningData">
@@ -205,12 +204,6 @@
                                 </h6>
                                 <p class="profile-rating">PERFORMANCE RATING : <span id="rating">8/10</span></p>
                                 <p class="about-me">ABOUT ME : <span id="aboutMe">8/10</span></p>
-                                <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                    <li class="nav-item" role="tab" aria-controls="home" aria-selected="true">
-                                        <a class="nav-link active" id="home-tab" data-toggle="tab"
-                                            href="#home">About</a>
-                                    </li>
-                                </ul>
                             </div>
                         </div>
                     </div>
@@ -220,7 +213,7 @@
                                 <p>PAST PROJECTS</p>
                                 <a href="" id="p1">Website Link</a><br />
                                 <a href="" id="p2">Bootsnipp Profile</a><br />
-                                <a href="" id="p3">Bootply Profile</a>
+                                <a href="" id="p3">Bootply Profile</a><br /><br />
                                 <p>SKILLS</p>
                                 <a href="" id="s1">Web Designer</a><br />
                                 <a href="" id="s2">Web Developer</a><br />
@@ -230,9 +223,8 @@
                             </div>
                         </div>
                         <div class="col-md-8">
-                            <div class="tab-content profile-tab" id="myTabContent">
-                                <div class="tab-pane fade show active" id="home" role="tabpanel"
-                                    aria-labelledby="home-tab">
+                            <div class="profile-tab">
+                                <h6 style="color: #43B02A;margin-bottom: 20px;">More Details</h6>
                                     <div class="row">
                                         <div class="col-md-4">
                                             <label>User Id</label>
@@ -281,7 +273,6 @@
                                             <p id="cc">test</p>
                                         </div>
                                     </div>
-                                </div>
                             </div>
                         </div>
                     </div>
