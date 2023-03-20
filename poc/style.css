@@ -1,29 +1,51 @@
-table {
+.CatalogTable {
+    margin: 5%;
+    margin-top: 6%;
     font-family: 'Open Sans';
     border-collapse: collapse;
-
-    width: 100%;
+    width: 90%;
     table-layout: fixed;
 }
-
-td,
-th {
+.PerformanceTable {
+    margin: 5%;
+    margin-top: 5%;
     font-family: 'Open Sans';
-    text-align: left;
+    border-collapse: collapse;
+    width: 90%;
+    table-layout: fixed;
+}
+.CatalogTable td, .PerformanceTable td{
+    font-family: 'Open Sans';
+    text-align: center;
+    padding: 8px;
+    color: white;
+    border: 0.1px solid rgba(255, 255, 255, 0.095);
+}
+.CatalogTable th, .PerformanceTable th{
+    font-family: 'Open Sans';
+    text-align: center;
     padding: 8px;
     color: white;
 }
-
+.PerfMetric{
+    padding-top: 5%;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.723);
+}
 
 p {
-    color: white;
+    color: white;   
 }
 
 .assign_button {
-    margin-top: 50px;
+    margin-top: 3%;
     float: right;
-    margin-right: 30px;
+    height: 4%;
+    margin-right: 6%;
+    padding: 0 1% 0 1%;
     font-family: 'Open Sans';
+    background-color: rgb(1, 151, 1);
+    color: white;
 }
 
 body {
@@ -32,11 +54,9 @@ body {
 }
 
 .viewbtn {
-    background-color: #0076a8;
-    border: 1px solid #0076a8;
+    background-color:rgb(1, 151, 1);
     text-align: center;
-    border-radius: 2px;
-    padding: 5px;
+    padding: 5px 10px 5px 10px;
     font-size: 12px;
     font-family: 'Open Sans';
     font-weight: 400;

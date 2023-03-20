@@ -1,42 +1,44 @@
 {
+    "OverallPerformance":"70",
+    "OverallPerformanceRating":"Excellent",
     "data_practitioner": [
         {
-            "Name": "test",
+            "Duration": "80 Hours",
             "Project": "STAFFIT",
             "Project_performance": "70%",
             "Overall_performance": "good",
             "Skills": "Angular"
         },
         {
-            "Name": "test",
+            "Duration": "90 Hours",
             "Project": "STAFFIT",
             "Project_performance": "70%",
             "Overall_performance": "good",
             "Skills": "Angular"
         },
         {
-            "Name": "test",
+            "Duration": "120 Hours",
             "Project": "STAFFIT",
             "Project_performance": "70%",
             "Overall_performance": "good",
             "Skills": "Angular"
         },
         {
-            "Name": "test",
+            "Duration": "180 Hours",
             "Project": "STAFFIT",
             "Project_performance": "70%",
             "Overall_performance": "good",
             "Skills": "Angular"
         },
         {
-            "Name": "test",
+            "Duration": "80 Hours",
             "Project": "STAFFIT",
             "Project_performance": "70%",
             "Overall_performance": "good",
             "Skills": "Angular"
         },
         {
-            "Name": "test",
+            "Duration": "200 Hours",
             "Project": "STAFFIT",
             "Project_performance": "70%",
             "Overall_performance": "good",
@@ -52,7 +54,7 @@
         {
             "File_name": "IRPM KT",
             "Date_modified": "30 jan 2023",
-            "roles_applicable": "Developer"
+            "roles_applicable": "Services, Functional"
         },
         {
             "File_name": "RMUI",
@@ -72,7 +74,7 @@
         {
             "File_name": "STAFFIT KT",
             "Date_modified": "30 jan 2023",
-            "roles_applicable": "Developer"
+            "roles_applicable": "QA"
         },
         {
             "File_name": "STAFFIT KT",
