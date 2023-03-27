@@ -1,7 +1,7 @@
 html,body{
     background-color: black !important;
     color:white;
-    height: 99%;
+    height: 98%;
     font-family: 'Open Sans';
     margin: 0 !important;
     padding: 0;
@@ -15,9 +15,9 @@ p{
 }
 
 .containermain{
-    /* max-width:99%; */
+    max-width:99%;
     display: flex;
-    height: 95%;
+    height: 98%;
     gap:10px;
 }
 
