@@ -18,10 +18,10 @@ var createTable = function (data) {
         data.data_practitioner.forEach((itemData) => {
             temp_data += "<tr>"
             temp_data += "<td>" + itemData.Project + "</td>";
-            temp_data += "<td>" + itemData.Duration + "</td>";
-            temp_data += "<td>" + itemData.Project_performance + "</td>";
+            temp_data += "<td style='width: 15%;'>" + itemData.Duration + "</td>";
+            temp_data += "<td style='width: 15%;'>" + itemData.Project_performance + "</td>";
             temp_data += "<td>" + itemData.Skills + "</td>";
-            temp_data += "<td>  <button   class='viewbtn'>View</button></td></tr>";
+            temp_data += "<td style='width: 15%;'>  <button   class='viewbtn'>View</button></td></tr>";
 
         });
         document.getElementById('practitioner_data').innerHTML = temp_data;

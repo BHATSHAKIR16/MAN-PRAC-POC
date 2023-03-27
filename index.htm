@@ -137,20 +137,24 @@
                     <h5 class="PerfMetric">Overall Performance: <span id="OverallPerformance" style="color: white;"></span> 
                         &emsp;&emsp;&emsp;&emsp; Performance Rating: <span id="OverallPerformanceRating" style="color: white;"></span>
                     </h5>
-                    <table class="PerformanceTable">
+                    <table class="tableheader">
                         <thead>
                             <tr style="border-bottom:1px solid white;" colspan="4">
-                                <th style="text-align: center;">Project Name</th>
-                                <th style="width: 15%; text-align: center;">Duration</th>
+                                <th >Project Name</th>
+                                <th style="width: 15%;">Duration</th>
                                 <th style="width: 15%; text-align: center;">Performance</th>
-                                <th style="text-align: center;">Skills</th>
-                                <th style="width: 15%; text-align: center;">More information</th>
+                                <th >Skills</th>
+                                <th style="width: 15%;">More information</th>
                             </tr>
                         </thead>
+                    </table>
+                    <div class="tablescroll">
+                    <table class="PerformanceTable">
                         <tbody id="practitioner_data">
 
                         </tbody>
                     </table>
+                    </div>
                 </div>
 
             </div>
@@ -158,19 +162,23 @@
         <section class="manageLearningScreen">
             <div>
                 <div class="container">
-                    <table class="CatalogTable">
+                    <table class="tableheader">
                         <thead>
                             <tr style="border-bottom:1px solid white;" colspan="4">
-                                <th style="width: 8%; text-align: center;">Select</th>
-                                <th style="width: 35%; text-align: center;">File Name</th>
-                                <th style="width: 15%; text-align: center;">Date Modified</th>
-                                <th style="width: 30%; text-align: center;">Roles Applicable</th>
+                                <th style="width: 8%;">Select</th>
+                                <th style="width: 35%;">File Name</th>
+                                <th style="width: 15%;">Date Modified</th>
+                                <th style="width: 30%;">Roles Applicable</th>
                             </tr>
                         </thead>
+                    </table>
+                    <div class="tablescroll">
+                    <table class="CatalogTable">
                         <tbody id="learningData">
 
                         </tbody>
                     </table>
+                    </div>
                 </div>
 
             </div>
@@ -180,9 +188,9 @@
 
         <section>
             <div class="container emp-profile">
-                <form method="post">
+                <div>
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-4">
                             <div class="profile-img">
                                 <img src="Sarthak/DP/assets/GettyImages-1363267282_lo.png" alt="" />
                                 <div class="file btn btn-lg btn-primary">
@@ -191,7 +199,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-8">
                             <div class="profile-head">
                                 <h5 id="username">
                                     Kshiti Ghelani
@@ -207,8 +215,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-4">
+                    <div class="row moredetails">
+                        <div class="col-4">
                             <div class="profile-work">
                                 <p>PAST PROJECTS</p>
                                 <a href="" id="p1">Website Link</a><br />
@@ -222,61 +230,61 @@
                                 <a href="" id="s5">PHP, .Net</a><br />
                             </div>
                         </div>
-                        <div class="col-md-8">
+                        <div class="col-8">
                             <div class="profile-tab">
                                 <h6 style="color: #43B02A;margin-bottom: 20px;">More Details</h6>
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-4">
                                             <label>User Id</label>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-6">
                                             <p id="userId">Kshiti123</p>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-4">
                                             <label>Email</label>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-6">
                                             <p id="email">kshitighelani@gmail.com</p>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-4">
                                             <label>Phone</label>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-6">
                                             <p id="phone">123 456 7890</p>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-4">
                                             <label>Member Firm</label>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-6">
                                             <p id="mf">Test</p>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-4">
                                             <label>Global Level</label>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-6">
                                             <p id="gl">test</p>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-4">
                                             <label>Cost Center</label>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-6">
                                             <p id="cc">test</p>
                                         </div>
                                     </div>
                             </div>
                         </div>
                     </div>
-                </form>
+                </div>
             </div>
         </section>
     </div>
