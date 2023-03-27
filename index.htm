@@ -21,6 +21,11 @@
     <header>
         <p id='screenHeading'>Assign Courses</p>
     </header>
+    <!-- <form class = 'universalSearch'>
+        <button ></button>
+        <input type = 'text' placeholder="Search courses">
+      
+    </form>  -->
     <div class="containermain">
         <section class="pracContainer">
             <div class='nav'>
@@ -40,8 +45,10 @@
             </div>
             <div class="separator"></div>
             <div class="praclist">
+                <div class = "prac-header">
                 <p>Practitoners</p>
-                <form class="form-class">
+                </div>
+                <form class="form-class" style="display: none;">
                     <input type="text" id='searchBox' placeholder="search">
                     <button type='submit'></button>
                 </form>
@@ -58,15 +65,35 @@
                 </div>
             </div>
         </section>
-        <section class="courseContainer">
+       
+        <section class="courseContainer"> 
             <div class="staffitCourses">
-                <p class='courseHeading'>Course suggestions based on proposed assignments in STAFFIT</p>
+                <div class ="searchFilter">
+                <p class='courseHeading'>Suggested courses</p> 
+                <form class="form-class">
+                    <button id="courseSearchBtn"><img src = 'assets/searchVector.svg' style="filter:opacity(0.7)"></button>
+                    <input type="text" placeholder="Search Courses" id="courseField">
+                </form>  
+                </div>
                 <div class="courseHolder">
                     <div class="courses">
-                        <div class="courseDetails">
+                        <div class="courseImage">
+                            <img  id = "courseImg" >
+                        </div>
+                        <div class="courseContent">
+                         <div class="courseDetails">
                             <div class="courseSourceDate">
                                 <p id='courseSource'>Course Source</p>
-                                <p id='datePosted'>Date Posted</p>
+                                <p id='datePosted' style="display: none;">Date Posted</p>
+                                <div class="courseSource" style="text-align: center;">
+                                    <div class="courseIconHolder">
+                                        <img src = "assets/icons8-info-144.png" width="20" height="20">
+                                    </div>
+                                    <div class = 'courseRec'>
+                                        <p >Course Recommendation</p>
+                                        <p>Staffit</p>
+                                    </div>
+                                </div>
                             </div>
                             <div class="courseTDet">
                                 <p id='courseTitle' class='courseTitle'>Course Title</p>
@@ -86,15 +113,25 @@
                                     <p id="duration">Duration</p>
                                 </div>
                             </div>
+                            <!-- <div class="courseSource" style="text-align: center;">
+                                <div class="courseIconHolder">
+                                    <img src = "assets/icons8-knowledge-sharing-100.png" width="20" height="20">
+                                </div>
+                                <div style="text-align: left;">
+                                    <p>Course Recommendation</p>
+                                    <p>Staffit</p>
+                                </div>
+                            </div> -->
                         </div>
+                    </div>
                         <div class="courseActions">
                             <button><img src="assets/info.svg"></button>
                             <button><img src="assets/saveVector.svg"></button>
                             <input type="checkbox">
                         </div>
-                    </div>
                 </div>
-            </div>
+             </div>
+        </div>
             <div class="performanceCourses">
                 <p class='courseHeading'>Course suggestions based on past project Performance</p>
                 <div class="courseHolderProposed">
@@ -129,6 +166,7 @@
                     </div>
                 </div>
             </div>
+            <button id="assignbutton" class="assign">Assign</button>
         </section>
         <section class="performanceScreen">
             <!-- <h3>Practitioner data with performance</h3> -->

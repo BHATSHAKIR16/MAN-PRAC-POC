@@ -17,8 +17,9 @@ p{
 .containermain{
     /* max-width:99%; */
     display: flex;
-    height: 95%;
-    gap:10px;
+    height: 85%;
+    gap:1%;
+    margin-right: 2%;
 }
 
 header{
@@ -42,7 +43,6 @@ header p{
     display:none;
 }
 .pracContainer{
-    max-width: 21%;
     position: relative;
     display: flex;
     gap:2px
@@ -77,33 +77,32 @@ header p{
     margin-left: auto;
     margin-right: auto;
 }
+.prac-header{
+    margin-bottom: 5%;
+}
 .praclist{
     margin-left: 5%;
     max-height: 89%;
 }
+.praclist p:first-child{
+    margin-bottom: 2%;
+}
 .form-class{
     display: flex;
-    background-color: #555;
-    border:1px solid currentColor;
-    color:#555;
-    border-radius: 5px;
-    margin-bottom:8%;
-    margin-top:2%
+    margin-bottom: 2%;
+    border-radius: 20px;
+    background:#303134;
 }
 input[type="text"]{
-  border:none;
-  background:#555;
-  color:white;
-  border:1px solid transparent;
-  border-radius: inherit;
-  margin: 0;
+  all: unset;
+  padding: 1%;
+  color: white;
+  margin-left: 1%;
 }
-button[type="submit"]{
-    background:#555 url("assets/searchVector.svg") no-repeat center;
+.form-class button{
     border:1px solid transparent;
     border-radius: inherit;
-    margin:0;
-    padding:10px
+    margin-left: 10px !important;
 }
 input[type="text"]:focus{
     outline: none;
@@ -113,6 +112,7 @@ input[type="text"]:focus{
     max-height:100%;
     overflow-y: scroll;
     overflow-x: hidden;
+    min-width: 15vw;
 }
 .practitioner::-webkit-scrollbar{
     margin-left: 20px;
@@ -153,6 +153,7 @@ input[type="text"]:focus{
 }
 .pracName{
     font-size: 0.8em;
+    white-space: nowrap;
 }
 .pracUnderline{
     width:inherit;
@@ -161,19 +162,18 @@ input[type="text"]:focus{
     margin:3% 0;
 }
 .courseContainer{
-    min-width:77%;
     display:flex;
     /* gap:30px; */
+    flex-wrap: wrap;
 }
 .staffitCourses,.performanceCourses{
- /* border:4px solid rgba(255, 255, 255, 0.12) */
-}
-.staffitCourses,.performanceCourses{
-    max-width:50%;
-    margin-left: 30px;
+    max-width: 95%;
+    margin-left: 4%;
     max-height: 100%;
-    margin-top:2.5%;
     /* overflow-y: scroll; */
+}
+.performanceCourses{
+    display: none;
 }
 .courseInfo{
     display:flex;
@@ -188,20 +188,32 @@ input[type="text"]:focus{
     gap:5px
 }
 .courses,.coursesProposed{
-    padding:0 10px;
+    padding: 0 10px;
     font-size: 12px;
-    border:5px solid rgba(255, 255, 255, 0.12);
+    margin-bottom: 3%;
+    background: #191c24;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    /* border:5px solid rgba(255, 255, 255, 0.12);
     border-bottom:5px solid rgba(255, 255, 255, 0.12);
-    border-top:5px solid rgba(255, 255, 255, 0.12);
+    border-top:5px solid rgba(255, 255, 255, 0.12); */
 }
 .courses ,.coursesProposed{
     display: flex;
     gap: 2%;
     min-width: 0;
-    padding: 10px 10px;
+    padding: 1%;
+}
+.courseImage{
+    /* flex-basis: 30% ; */
+    border: 1px solid white;
+    max-width: 35%;
+}
+.courseImage img{
+    max-width: 100%;
+    min-height: 100%;
 }
 .courseDescription{
-    width: 385px;
+    max-width: 100%;
     overflow: hidden;
      text-overflow: ellipsis;
      display: -webkit-box;
@@ -212,7 +224,6 @@ input[type="text"]:focus{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    margin-right: 12px;
 }
 .courseActions button{
     background-color: #43B02A;
@@ -246,7 +257,7 @@ input[type="text"]:focus{
     overflow-y: scroll;
 }
 .courseHolder::-webkit-scrollbar, .courseHolderProposed::-webkit-scrollbar{
-    width:10px;
+    display: none;
 }
 .courseHolder::-webkit-scrollbar-thumb, .courseHolderProposed::-webkit-scrollbar-thumb{
     background-color: green;
@@ -272,24 +283,84 @@ input[type="text"]:focus{
     display: flex;
     justify-content: space-between;
     margin-top: 0.3rem;
-    margin-bottom:0.7rem;
+    margin-bottom:0.5rem;
 }
 .assign{
-    padding:6px 12px;
+    padding: 1px 12px;
     background-color: #019701;
-    color:white;
-    box-shadow: inset -1px -1px 3px 0px rgb(255 255 255 / 30%),
-                1px 1px 1px 0px #019701;
-    border:1px solid #019701; 
-    float:right;
-    margin-right:2%           
-}
+    color: white;
+    box-shadow: inset -1px -1px 3px 0px rgb(255 255 255 / 30%), 1px 1px 1px 0px #019701;
+    border: 1px solid #019701;
+    float: right;
+    margin-right: 1%;
+    margin-left: auto;
+}      
 .courseHeading{
-    text-align: center;
+    /* text-align: center; */
     font-family: 'open sans';
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     padding: 5px 0;
-    background: #555555;
+    font-weight: 500;
+    /* background: #555555; */
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
+.courseSource{
+    display: inline-flex;
+    /* position: relative;
+    left: 38%; */
+    align-items: center;
+    gap: 8px;
+    border-radius: 20px;
+    /* padding: 2px 8px; */
+}
+.courseRec{
+    text-align: left;
+}
+.courseRec p:first-child{
+  
+    font-weight: 500;
+}
+.staffitCourses img:nth-child(2){
+    float: right;
+    position: relative;
+    right: 4%;
+    bottom: 5%;
+    color: white;
+}
+.staffitCourses svg{
+    color: white;
+}
+.searchFilter{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+/* .searchFilter button:last-child{
+    margin-right: 1%!important;
+} */
+.searchFilter button{
+    all: unset !important;
+    padding-left: 5% !important;
+    margin-bottom: 3px !important;
+}
+@media only screen and (max-width :700px ) {
+    .courses{
+        display: block;
+    }
+    .courseImage{
+        min-width: 100%;
+    }
+    .courseActions{
+        flex-direction: row;
+        margin-top: 4%;
+        margin-bottom: 1%;
+    }
+    .nav{
+        display: none !important;
+    }
+}
+/* .courseSource img{
+    border: 1px solid white;
+    border-radius: 50px;
+} */
