@@ -17,10 +17,10 @@ var createTable2 = function(data){
         var temp = "";
         data.data.forEach((itemData) => {
             temp += "<tr>"
-            temp += "<td> <input type='checkbox' name='selectBox'  class='select-row'> </td>";
-            temp += "<td "+"style='text-align: Left'" +">" + itemData.File_name + "</td>";
-            temp += "<td>" + itemData.Date_modified + "</td>";
-            temp += "<td>" + itemData.roles_applicable + "</td></tr>";
+            temp += "<td style='width: 8%;'> <input type='checkbox' name='selectBox'  class='select-row'> </td>";
+            temp += "<td style='width: 35%; text-align: left;'>" + itemData.File_name + "</td>";
+            temp += "<td style='width: 15%;'>" + itemData.Date_modified + "</td>";
+            temp += "<td style='width: 30%;'>" + itemData.roles_applicable + "</td></tr>";
         });
         document.getElementById('learningData').innerHTML = temp;
 

@@ -1,18 +1,39 @@
 .CatalogTable {
-    margin: 5%;
-    margin-top: 6%;
+    margin-left: 5%;
+    margin-right: 5%;
     font-family: 'Open Sans';
     border-collapse: collapse;
     width: 90%;
     table-layout: fixed;
 }
 .PerformanceTable {
-    margin: 5%;
-    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
     font-family: 'Open Sans';
     border-collapse: collapse;
     width: 90%;
     table-layout: fixed;
+}
+.tableheader{
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 5%;
+    margin-bottom: 1%;
+    border-collapse: collapse;
+    width: 90%;
+    table-layout: fixed;
+}
+.tablescroll{
+    height: 60vh;
+    overflow-y: scroll;
+}
+.tablescroll::-webkit-scrollbar, .tablescroll::-webkit-scrollbar{
+    width:10px;
+}
+.tablescroll::-webkit-scrollbar-thumb, .tablescroll::-webkit-scrollbar-thumb{
+    background-color: green;
+  /* border-left:10px solid black; */
+  border-radius: 20px;
 }
 .CatalogTable td, .PerformanceTable td{
     font-family: 'Open Sans';
@@ -21,7 +42,7 @@
     color: white;
     border: 0.1px solid rgba(255, 255, 255, 0.095);
 }
-.CatalogTable th, .PerformanceTable th{
+.CatalogTable th, .PerformanceTable th, .tableheader th{
     font-family: 'Open Sans';
     text-align: center;
     padding: 8px;
