@@ -46,10 +46,12 @@
             <div class="separator"></div>
             <div class="praclist">
                 <div class = "prac-header">
-                <p>Practitoners</p>
+                <p id="pracHeader">Practitoners</p>
+                <input type="text" id='pracSearch' placeholder="Search Practitioner" style="display: none;">
+                <button onclick="enablePracSearch(vsr=!true)"><img src="assets/filterIcon.svg" width="18" height="18"></button>
                 </div>
                 <form class="form-class" style="display: none;">
-                    <input type="text" id='searchBox' placeholder="search">
+               
                     <button type='submit'></button>
                 </form>
                 <div class="practitioner">
@@ -68,12 +70,17 @@
        
         <section class="courseContainer"> 
             <div class="staffitCourses">
+             
+
                 <div class ="searchFilter">
                 <p class='courseHeading'>Suggested courses</p> 
                 <form class="form-class">
                     <button id="courseSearchBtn"><img src = 'assets/searchVector.svg' style="filter:opacity(0.7)"></button>
                     <input type="text" placeholder="Search Courses" id="courseField">
                 </form>  
+                </div>
+                <div class="no-results" id = 'noResults'>
+                    <img src="assets/no-result-found-icon.svg">
                 </div>
                 <div class="courseHolder">
                     <div class="courses">

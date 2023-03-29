@@ -20,9 +20,9 @@
 }
 
 @media screen and (max-height: 700px) {
-    .containermain{
+    /* .containermain{
         height: 96%;
-    }
+    } */
 }
 @media screen and (min-height: 700px) {
     .moredetails {
