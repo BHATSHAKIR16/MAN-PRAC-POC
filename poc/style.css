@@ -28,12 +28,12 @@
     overflow-y: scroll;
 }
 .tablescroll::-webkit-scrollbar, .tablescroll::-webkit-scrollbar{
-    width:10px;
+    width:6px;
+    border-radius: 20px;
 }
 .tablescroll::-webkit-scrollbar-thumb, .tablescroll::-webkit-scrollbar-thumb{
     background-color: green;
-  /* border-left:10px solid black; */
-  border-radius: 20px;
+    border-radius: 20px;
 }
 .CatalogTable td, .PerformanceTable td{
     font-family: 'Open Sans';
