@@ -15,12 +15,14 @@ var setProfileDetails = function (data) {
     document.getElementById('location').innerHTML = data.profile[0].location;
     document.getElementById('role').innerHTML = data.profile[0].role;
     document.getElementById('aboutMe').innerHTML = data.profile[0].about.aboutMe;
-    document.getElementById('userId').innerHTML = data.profile[0].userId;
     document.getElementById('email').innerHTML = data.profile[0].about.email;
     document.getElementById('phone').innerHTML = data.profile[0].about.phone;
     document.getElementById('mf').innerHTML = data.profile[0].about.memberFirm;
     document.getElementById('gl').innerHTML = data.profile[0].about.globalLevel;
+    document.getElementById('gb').innerHTML = data.profile[0].about.globalBusiness;
+    document.getElementById('gi').innerHTML = data.profile[0].about.globalIndustries;
     document.getElementById('cc').innerHTML = data.profile[0].about.costcenter;
+    document.getElementById('tenure').innerHTML = data.profile[0].about.tenure;
     
     //Past Projects Section
     document.getElementById('p1').innerHTML = data.profile[0].projects[0];

@@ -5,14 +5,16 @@
         "location": "United States",
         "role": "Web Developer and Designer",
         "performanceRating": "8/10",
-        "userId": "testuser",
         "about": {
           "aboutMe": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
           "email": "testuser@testmail.com",
           "phone": "0123456789",
           "memberFirm":"Test MF",
           "globalLevel":"Test Level",
-          "costcenter":"Test Cost Center"
+          "globalBusiness":"Test business",
+          "globalIndustries":"Test industries",
+          "costcenter":"Test Cost Center",
+          "tenure":"2 Years 3 Months"
         },
         "projects":[
           "Test Project 1",
