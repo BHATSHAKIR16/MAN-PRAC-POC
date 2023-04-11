@@ -1,5 +1,5 @@
 html,body{
-    background-color: black !important;
+    background-color: #1f1f1f !important;
     color:white;
     height: 98%;
     font-family: 'Open Sans';
@@ -17,21 +17,23 @@ p{
 .containermain{
     max-width:99%;
     display: flex;
-    height: 98%;
+    height: 95%;
     gap:10px;
 }
 
 header{
-    display:block;
-    margin-top:5px;
-    margin-bottom:5px;
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 5px;
     max-height: 30px;
+    background: #292929;
+    padding-bottom: 2.8%;
+    box-shadow: 0px 1px 2px #1d1d1d;
 }
 header p{
     text-align: center;
-    color: rgb(1, 151, 1);
-    text-shadow: 1px 1px 4px rgb(1 151 1);
-    font-size: 1.5em;
+    color: rgb(255 255 255);
+    font-size: 1.4em;
     letter-spacing: 0.7px;
     font-weight: 500;
 }
@@ -44,7 +46,9 @@ header p{
 .pracContainer{
     position: relative;
     display: flex;
-    gap:2px
+    gap: 2px;
+    /* max-height: 100%; */
+    margin-top: -0.3%;
 }
 .nav{
     display: inline-flex;
@@ -77,11 +81,31 @@ header p{
     margin-right: auto;
 }
 .prac-header{
+    /* margin-bottom: 5%;
+    border-bottom: 1px solid #747171;
+    padding-bottom: 4%; */
     margin-bottom: 5%;
+    border-bottom: 1px solid #747171;
+    padding: 5% 0;
+}
+.prac-header button{
+    all: unset;
+    position: absolute;
+    left: 95%;
+    top: 1.5%;
+}
+.prac-header input[type='text']{
+    all: unset;
+    color: white;
+    max-width: 84%;
 }
 .praclist{
-    margin-left: 5%;
-    max-height: 89%;
+    margin-left: 3%;
+    max-height: 100%;
+    /* background: linear-gradient(267deg, #222222, black); */
+    box-shadow: 0px 8px 10px 0px #0000008f;
+    z-index: 2;
+    padding-left: 2%;
 }
 .praclist p:first-child{
     margin-bottom: 2%;
@@ -91,6 +115,7 @@ header p{
     margin-bottom: 2%;
     border-radius: 20px;
     background:#303134;
+    margin-top: 1%;
 }
 input[type="text"]{
   all: unset;
@@ -108,7 +133,7 @@ input[type="text"]:focus{
 }
 
 .practitioner{
-    max-height:100%;
+    max-height:91%;
     overflow-y: scroll;
     overflow-x: hidden;
     min-width: 15vw;
@@ -117,8 +142,9 @@ input[type="text"]:focus{
     margin-left: 20px;
     width:15px;
     background-color:rgba(255, 255, 255, 0.12);
+    display: none;
 }
-.practitioner::-webkit-scrollbar-thumb{
+/* .practitioner::-webkit-scrollbar-thumb{
   background-color: green;
   border-left:10px solid black;
   border-radius: 20px;
@@ -126,14 +152,17 @@ input[type="text"]:focus{
 }
 .practitioner::-webkit-scrollbar-track{
    background-color: black;
-  }
+  } */
 .singlePractitioner{
     display: flex;
     align-items: center;
     gap:5%;
-    border-radius: 5px;
+    border-radius: 2px;
     align-items: center;
     padding:0;
+    position: relative;
+    transition: transform 0.5s;
+    margin-bottom: 2%;
     /* border-bottom: 1px solid rgba(255, 255, 255, 0.5); */
 }
 .singlePractitioner:hover{
@@ -156,19 +185,25 @@ input[type="text"]:focus{
 }
 .pracUnderline{
     width:inherit;
-    height:1px;
     background-color: rgba(255, 255, 255, 0.5);
     margin:3% 0;
 }
+.pin-button{
+    all: unset; 
+     margin-left: 10%; 
+     margin-bottom: 2%;
+     display: none;
+}
 .courseContainer{
-    display:flex;
-    /* gap:30px; */
+    display: flex;
     flex-wrap: wrap;
+    /* background: linear-gradient(88deg, #1f1f1f, transparent); */
+    max-height: 93%;
 }
 .staffitCourses,.performanceCourses{
     max-width: 95%;
     margin-left: 4%;
-    max-height: 100%;
+    height: 100%;
     /* overflow-y: scroll; */
 }
 .performanceCourses{
@@ -201,6 +236,7 @@ input[type="text"]:focus{
     gap: 2%;
     min-width: 0;
     padding: 1%;
+    box-shadow: 0px 2px 4px 0px #000000de;
 }
 .courseImage{
     /* flex-basis: 30% ; */
@@ -230,10 +266,17 @@ input[type="text"]:focus{
     width: 18px;
     height: 18px;
 }
+.courseActions button:nth-child(2) {
+    /* position: relative ;
+    /* left: -1.1px;
+    top: -1.5px; */
+    background-color: white;
+    /* all: unset; */
+}
 .courseActions button:nth-child(2) img{
-    position: relative ;
-    left: -1.1px;
-    top: -1.5px;
+    position: relative;
+    right: 0.4rem;
+    bottom: 2.5px;
 }
 .courseActions button:first-child img{
     position: relative;
@@ -355,11 +398,37 @@ input[type="text"]:focus{
         margin-top: 4%;
         margin-bottom: 1%;
     }
-    .nav{
+    /* .nav{
         display: none !important;
-    }
+    } */
+}
+.no-results{
+    min-width: 72vw;
+    height: 100%;
+    text-align: center;
+    display: none;
+}
+.no-results img{
+    max-width: 30%;
+    max-height: 42%;
+    transform: translateY(15vh);
+    filter: opacity(0.8);
 }
 /* .courseSource img{
     border: 1px solid white;
     border-radius: 50px;
 } */
+.modal-warning{
+    display: none;
+    position: absolute;
+    background-color: #ab2727;
+    width: 20%;
+    /* height: 5%; */
+    bottom: -10%;
+    left: 37%;
+    padding: 0.5rem;
+    border-radius: 2px;
+    z-index: 2;
+    text-align: center;
+    transform: translate(50px, -50px);
+}

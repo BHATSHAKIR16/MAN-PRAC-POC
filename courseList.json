@@ -6,7 +6,9 @@
       "courseDesc" : "This course starts from scratch, you neither need to know Angular 1 nor Angular 2!From Setup to Deployment, this course covers it all! You'll learn all about Components, Directives, Services, Forms, Http Access, Authentication, Optimizing an Angular App with Modules and Offline Compilation and much more - and in the end: You'll learn how to deploy an application!",
       "courseLang" : "English",
       "CPEcredits" : 4,
-      "duration" : "6h"
+      "duration" : "6h",
+      "courseImage" : "assets/2822464-1579736809034-16x9.png",
+      "courseID" : 2000
     },
     {
         "courseSource":"Pluralsigth",
@@ -15,7 +17,9 @@
         "courseDesc" : "This course will teach you React.js in a practice-oriented way, using all the latest patterns and best practices you need. You will learn all the key fundamentals as well as advanced concepts and related topics to turn you into a React.js developer.",
         "courseLang" : "English",
         "CPEcredits" : 3,
-        "duration" : "5h"
+        "duration" : "5h",
+        "courseImage" : "assets/2822464-1579736809034-16x9.png",
+        "courseID" : 2001
     },
     {
         "courseSource":"Coursera",
@@ -24,7 +28,9 @@
         "courseDesc" : "Your dream of becoming UI Developer / Frontend Developer becomes TRUE with this course. This course provides Real training lectures with clear explanations with practicals. Each topic will covered with theoretical, practical with best practices and examples.",
         "courseLang" : "English",
         "CPEcredits" : 3,
-        "duration" : "5h"
+        "duration" : "5h",
+        "courseImage" : "assets/2822464-1579736809034-16x9.png",
+        "courseID" : 2002
     },
     {
         "courseSource":"Udemy",
@@ -33,7 +39,9 @@
         "courseDesc" : "This course does not assume any prior experience. We start at square one and learn together bit by bit. By the end of the course you will have created (by hand) a website that looks great on phones, tablets, laptops, and desktops alike.",
         "courseLang" : "English",
         "CPEcredits" : 3,
-        "duration" : "5h"
+        "duration" : "5h",
+        "courseImage" : "assets/2822464-1579736809034-16x9.png",
+        "courseID" : 2003
     },
     {
         "courseSource":"Coursera",
@@ -42,7 +50,9 @@
         "courseDesc" : "Your dream of becoming UI Developer / Frontend Developer becomes TRUE with this course. This course provides Real training lectures with clear explanations with practicals. Each topic will covered with theoretical, practical with best practices and examples.",
         "courseLang" : "English",
         "CPEcredits" : 3,
-        "duration" : "5h"
+        "duration" : "5h",
+        "courseImage" : "assets/2822464-1579736809034-16x9.png",
+        "courseID" : 2004
     },
     {
         "courseSource":"Udemy",
@@ -51,7 +61,9 @@
         "courseDesc" : "This course starts from scratch, you neither need to know Angular 1 nor Angular 2!From Setup to Deployment, this course covers it all! You'll learn all about Components, Directives, Services, Forms, Http Access, Authentication, Optimizing an Angular App with Modules and Offline Compilation and much more - and in the end: You'll learn how to deploy an application!",
         "courseLang" : "English",
         "CPEcredits" : 4,
-        "duration" : "6h"
+        "duration" : "6h",
+        "courseImage" : "assets/2822464-1579736809034-16x9.png",
+        "courseID" : 2005
       }
 ]
 }

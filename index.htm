@@ -57,13 +57,15 @@
                
                     <button type='submit'></button>
                 </form>
-                <div class="practitioner">
-                    <div class="singlePractitioner" onclick="onPractitionerClick()">
+                <div class="practitioner" id="onePrac">
+                    <div class="singlePractitioner" >
                         <img width='45' height='45' id='pracImg'>
                         <div class="pracDef">
                             <p class='pracName'></p>
                             <p class="pracRole"></p>
+                            <p id = "pracID" style="display:none; visibility: hidden; width: 0px; height: 0px;"></p>
                         </div>
+                        <button class = "pin-button"><img src = "assets/pin-icon.svg" height="17" width="17"></button>
                     </div>
                     <div class="pracUnderline">
                     </div>
@@ -76,7 +78,8 @@
              
 
                 <div class ="searchFilter">
-                <p class='courseHeading'>Suggested courses</p> 
+                <p class='courseHeading'>Suggested courses</p>
+                <button><img src = "assets/filterIcon.svg" height="20" width="20"></button>
                 <form class="form-class">
                     <button id="courseSearchBtn"><img src = 'assets/searchVector.svg' style="filter:opacity(0.7)"></button>
                     <input type="text" placeholder="Search Courses" id="courseField">
@@ -85,8 +88,9 @@
                 <div class="no-results" id = 'noResults'>
                     <img src="assets/no-result-found-icon.svg">
                 </div>
-                <div class="courseHolder">
+                <div class="courseHolder" >
                     <div class="courses">
+                        <p id="courseID" style="display:none"></p>
                         <div class="courseImage">
                             <img  id = "courseImg" >
                         </div>
@@ -136,8 +140,8 @@
                     </div>
                         <div class="courseActions">
                             <button><img src="assets/info.svg"></button>
-                            <button><img src="assets/saveVector.svg"></button>
-                            <input type="checkbox">
+                            <button  id="courseSaveBtn"><img id="courseSaveBtn" src="assets/saveCourse.svg" width="19" height="19"></button>
+                            <input id = 'toggleCourses' type="checkbox">
                         </div>
                 </div>
              </div>
@@ -176,8 +180,32 @@
                     </div>
                 </div>
             </div>
-            <button id="assignbutton" class="assign">Assign</button>
+            <button id="assignbutton" class="assign" data-bs-toggle="modal" 
+            data-bs-target="#AssignCoursesModal">Assign</button>
+            <!-- <div class="modal fade" id="AssignCoursesModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" style="color: black;" id="exampleModalLabel">Assign Courses</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            Do you want to assign the courses to selected practitioners?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            <button type="button" id="submitButton" class="btn btn-primary" style="background-color: #43B02A;border: none;" onclick="AssignCoursesPost()">
+                                <span id="assignSpan">Assign</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
         </section>
+        <div class = "modal-warning">
+            <p id="warningText">please select a Practitioner!</p>
+        </div>
         <section class="performanceScreen">
             <!-- <h3>Practitioner data with performance</h3> -->
             <div>
