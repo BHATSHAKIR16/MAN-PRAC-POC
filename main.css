@@ -113,9 +113,16 @@ header p{
 .form-class{
     display: flex;
     margin-bottom: 2%;
-    border-radius: 20px;
-    background:#303134;
+    border-radius: 3px;
+
     margin-top: 1%;
+    padding: 0.1rem;
+    position: relative;
+    border: 1px solid white;
+}
+.form-class:focus-within{
+    background: #515151;
+    border: 1px solid transparent;
 }
 input[type="text"]{
   all: unset;
@@ -418,6 +425,73 @@ input[type="text"]:focus{
     border: 1px solid white;
     border-radius: 50px;
 } */
+.filter-section-inner{
+    display: flex;
+    position: absolute;
+    top: 3.5rem;
+    right: 16.5rem;
+    opacity: 0.8;
+    align-items: center;
+    border-radius: 3px;
+    padding: 0.15rem;
+    cursor: pointer;
+    justify-content: space-between;
+    padding-left: 11px;
+    border: 1px solid white;
+}
+.filter-section-inner:hover,.filter-section-inner:focus-within{
+    background: #5e5e5e;
+    border: 1px solid transparent;
+}
+.filter-dropdown{
+    height: auto;
+    width: fit-content;
+    background-color: #515151;
+    position: absolute;
+    z-index: 3;
+    right: 16.5vw;
+    top: 15.7vh;
+    border-radius: 3px;
+    color: white;
+    padding: 10px;
+    padding-bottom: 20px;
+    display: none;
+}.filter-dropdown h5{
+    padding-bottom: 5px;
+    border-bottom: 1px solid gray;
+}
+.filter-dropdown button{
+    position: absolute;
+    background: none;
+    color: white;
+    top: 6%;
+    right: 2%;
+}
+.filter-dropdown label{
+    font-size: 0.9rem;
+    /* margin: 5px; */
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
+.filter-section-inner span:last-child{
+    transform: rotate(90deg);
+    position: relative;
+    left: 7px;
+    color: white;
+}
+.filter-section-inner span:nth-last-child(2){
+    height: 100%;
+    width: 1px;
+    background-color: white;
+}
+.course-filter{
+    background: none;
+    position: relative;
+    bottom: 2px;
+}
+.course-filter:hover{
+    opacity: 1;
+}
 .modal-warning{
     display: none;
     position: absolute;

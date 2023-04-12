@@ -103,7 +103,7 @@ function printPracData(arbData){
     // pracHolder.innerHTML=output;
     }
     }
- function addCourses(updatedCourseData){
+ function addCourses(updatedCourseData,searchFunction){
     courses.courseContainer.innerHTML=''
     if(updatedCourseData.length==0){
         document.getElementById('noResults').style.display='block'
@@ -217,8 +217,6 @@ function pinSelectedPrac(event,tagname){
 let MapCourses = {
     savedCourses : [],
     selectedCourses : [],
-    filteredSelectedCourses : [],
-    filteredPractitioners : [],
     assignButton : document.getElementById('assignbutton'),
     selectCourses : function(){
         this.selectedCourses = []
@@ -237,20 +235,21 @@ let MapCourses = {
         })
     },
     assignCourses : function(){
+        let warningText=document.getElementById('warningText')
+        let modalWarning=document.querySelector('.modal-warning')
+        var myModal = new bootstrap.Modal(document.getElementById('AssignCoursesModal2'), {
+            keyboard: false
+          })
         this.assignButton.addEventListener('click',()=>{
-            let warningText=document.getElementById('warningText')
-            let modalWarning=document.querySelector('.modal-warning')
-            let myModal = new bootstrap.Modal(document.getElementById('AssignCoursesModal'), {show: false});
             if(this.selectedCourses.length==0){
-                myModal.hide()
                 modalWarning.style.display='block'
                warningText.innerHTML='Please select a Course first!'
-              
+               myModal.hide()
             }
             else if(selectedPractitioners.length==0){
-                myModal.hide()
                 modalWarning.style.display='block'
                 warningText.innerHTML='Please select a Practitioner first!'
+                myModal.hide()
             }
             else{
                 myModal.show()
@@ -259,7 +258,7 @@ let MapCourses = {
            console.log(mappedobj)
             }
             setTimeout(() => {
-                modalWarning.style.opacity='0'
+                modalWarning.style.display='none'
             }, 2000);
         })
     }
@@ -269,8 +268,8 @@ function filterDuplicates(arr){
     return arr.filter((el,index)=>
         arr.indexOf(el)===index)
 }
+let savedCourses = []
 function saveCourses() {
-    let savedCourses = []
     courses.courseContainer.addEventListener('click',(event)=>{
         courseButton= event.target.id=='courseSaveBtn'
       if(courseButton){
@@ -288,12 +287,15 @@ function saveCourses() {
         console.log(event)
        
         console.log(savedCourses)
+        return savedCourses
       }
+      
     })
 }
 function mapPracCourses(pracs,courses){
+    const courses2 = JSON.parse(JSON.stringify(courses))
     mappedObj = {}
-    for(let course of courses){
+    for(let course of courses2){
             mappedObj[course]=pracs
         }
     return mappedObj
@@ -339,8 +341,44 @@ function AssignCoursesPost(){
         document.getElementById('assignSpan').innerHTML = "Assign";
     }, 1500);
 }
+//filter courses on save checkbox
+ document.getElementById('checkSaved').addEventListener('change',(event)=>{
+    if(event.target.checked){
+        console.log(savedCourses)
+       let filteredCourses= filterCourses()
+       console.log(filteredCourses)
+       addCourses(filteredCourses);
+    }
+    else{
+        addCourses(courseData)
+    }
+ })
+ function filterCourses(){
+    console.log(courseData)
+    let tempCourses 
+    const newfilteredCourses = []
+    for(let course of savedCourses){
+       tempCourses= courseData.filter((e)=> e.courseID==course)
+       newfilteredCourses.push(tempCourses[0])
+    }
+  return newfilteredCourses
+ }
+ function toggleFilDropdown(elem){
+document.querySelector('.filter-dropdown').style.display="block"
+  elem.style.backgroundColor='#515151'
+  elem.style.border='1px solid transparent'
+ }
+ function closeDropdown(){
+const dropdownButton=document.querySelector('.filter-dropdown')
+dropdownButton.style.display='none'
+const parentDropdown= dropdownButton.parentNode.childNodes[1]
+parentDropdown.style.backgroundColor='transparent'
+parentDropdown.style.border='1px solid white'
+//add hover event listener
+    
+ }
 
    MapCourses.selectCourses();
     pinSelectedPracMaster();
-   saveCourses();
+     saveCourses();
    MapCourses.assignCourses();
