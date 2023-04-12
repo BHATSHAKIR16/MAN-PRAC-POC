@@ -38,21 +38,51 @@ function selectedItems(current) {
 }
 
 function AssignCoursesPost(){
-    console.log("courses assigned");
-    document.getElementById('assignSpan').innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>';   
-    document.getElementById('submitButton').disabled = true;
+        document.getElementById('assignSpan').innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>';   
+        document.getElementById('submitButton').disabled = true;
+        
+        //Code for post call with selectedItemsList goes here
+        
+        setTimeout(function() {
+            document.getElementById('assignSpan').innerHTML = "Assigned";
+        }, 500);
     
-    //Code for post call with selectedItemsList goes here
-    
-    setTimeout(function() {
-        document.getElementById('assignSpan').innerHTML = "Assigned";
-    }, 500);
-
-    setTimeout(function() {
-        var myModalEl = document.getElementById('AssignCoursesModal');
-        var modal = bootstrap.Modal.getInstance(myModalEl);
-        modal.hide();
-        document.getElementById('submitButton').disabled = false;
-        document.getElementById('assignSpan').innerHTML = "Assign";
-    }, 1500);
+        setTimeout(function() {
+            var myModalEl = document.getElementById('AssignCoursesModal');
+            var modal = bootstrap.Modal.getInstance(myModalEl);
+            modal.hide();
+            document.getElementById('submitButton').disabled = false;
+            document.getElementById('assignSpan').innerHTML = "Assign";
+        }, 1500);
 }
+
+
+let checkSelection = {
+    assignButton2 : document.getElementById('assignbutton2'),
+     showExceptionModal: function(){
+        this.assignButton2.addEventListener('click',()=>{
+            let warningText=document.getElementById('warningText')
+            let modalWarning=document.querySelector('.modal-warning')
+
+            if(selectedItemsList.length==0){
+                modalWarning.style.display='block'
+               warningText.innerHTML='Please select a Course first!' 
+            }
+            else if(selectedPractitioners.length==0){
+                modalWarning.style.display='block'
+                warningText.innerHTML='Please select a Practitioner first!'
+            }
+            else{
+                var myModal = new bootstrap.Modal(document.getElementById('AssignCoursesModal'))
+               myModal.toggle();
+            }
+            setTimeout(() => {
+                modalWarning.style.display = "none"
+            }, 2000);
+        })
+        
+    console.log(selectedItemsList);
+    }
+}
+
+checkSelection.showExceptionModal();
