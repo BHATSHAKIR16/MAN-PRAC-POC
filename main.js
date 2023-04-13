@@ -23,7 +23,7 @@ let practitionerData = function () {
     fetch('practitionerInfo.json').then(Response =>
         Response.json()).then(data => {
             pracData = data
-            printPracData(pracData);
+            printPracData(pracData,false);
         })
         
 }
@@ -31,7 +31,7 @@ function filterSearchData(searchData){
   let resultData=[];
  resultData=pracData.filter((e)=>e.name.toLowerCase().includes(searchData.toLowerCase())
  )
- printPracData(resultData)
+ printPracData(resultData,false)
 }
 let courses = {
     coursesHolder : document.querySelector('.courses'),
@@ -74,20 +74,30 @@ let pracList = {
     pracUnderline : document.querySelector('.pracUnderline')
 }
 
-function printPracData(arbData){
-    pracHolder.innerHTML=""
-    // let output = ''
-    for (let item of arbData) {
-        pracList.pracImage.src= item.img
-        pracList.pracName.innerHTML=item.name; 
-        pracList.pracRole.innerHTML=item.role;
-        pracList.pracID.innerHTML=item.ID;
-        let clonedPrac = pracList.singlePractitioner.cloneNode(true)
-        let clonedUnderline = pracList.pracUnderline.cloneNode(true)
-        pracList.singlePractitioner.remove()
-        pracList.pracUnderline.remove()
-        pracHolder.appendChild(clonedPrac);
-        pracHolder.appendChild(clonedUnderline)
+function printPracData(arbData,screenAction){
+    const selectemTempPracs=[];
+    let selectedPracsDup = JSON.parse(JSON.stringify(selectedPracs))
+    
+    if(screenAction==true){
+        selectedPracsDup=[]
+    }
+        console.log(selectedPracsDup)
+        pracHolder.innerHTML=""
+        // let output = ''
+        for (let item of arbData) {
+            pracList.pracImage.src= item.img
+            pracList.pracName.innerHTML=item.name; 
+            pracList.pracRole.innerHTML=item.role;
+            pracList.pracID.innerHTML=item.ID;
+            let clonedPrac = pracList.singlePractitioner.cloneNode(true)
+            pracList.singlePractitioner.remove()
+            pracHolder.appendChild(clonedPrac);
+            if(selectedPracsDup.length>0){
+            addSelectedPracs(selectedPracsDup,item,selectemTempPracs,clonedPrac,pracHolder);
+        }
+   
+        // pracHolder.appendChild(clonedUnderline)
+       
     //     output += `
     // <div class = "singlePractitioner">
     // <img width = '45' height = '45' src = "${item.img}">
@@ -102,7 +112,24 @@ function printPracData(arbData){
     
     // pracHolder.innerHTML=output;
     }
+}
+    function addSelectedPracs(selectedPracsDup,item,selectemTempPracs,clonedPrac,pracHolder){
+        for(let pracId of selectedPracsDup){
+            if(item.ID==pracId){
+               const tempPrac=item;
+               selectemTempPracs.push(tempPrac);
+            }    
+           }
+           console.log(selectemTempPracs)
+           for(let tempPrac of selectemTempPracs){
+               if(tempPrac.ID==item.ID){
+                   console.log(clonedPrac.childNodes)
+                   clonedPrac.childNodes[5].style.display='block'
+                   clonedPrac.style.backgroundColor='#ffffff1f'
+                   pracHolder.prepend(clonedPrac);
+               }
     }
+}
  function addCourses(updatedCourseData,searchFunction){
     courses.courseContainer.innerHTML=''
     if(updatedCourseData.length==0){
@@ -125,22 +152,12 @@ function printPracData(arbData){
             courses.courseContainer.appendChild(cloned)
   
        }
-       
-        //   courses.courseSourceProposed.innerHTML=item.courseSource;
-        //   courses.datePostedProposed.innerHTML=item.datePosted
-        //   courses.courseTitleProposed.innerHTML=item.courseTitle
-        //   courses.courseDescProposed.innerHTML=item.courseDesc
-        //   courses.courseLangProposed.innerHTML=item.courseLang
-        //   courses.CPEProposed.innerHTML=item.CPEcredits
-        //   courses.durationProposed.innerHTML=item.duration
-        //   let clonedProposed=courses.coursesHolderProposed.cloneNode(true)
-        //   courses.coursesHolderProposed.remove()
-        //   courses.courseContainerProposed.appendChild(clonedProposed)
        }
     }
 practitionerData();
 courses.getCourseData();
 function displayUtil(empProfile,courseContainer,performanceScreen,manageLearningScreen,screenHeading){
+    printPracData(pracData,true);
     document.querySelector('.emp-profile').style.display = empProfile
     document.querySelector('.courseContainer').style.display = courseContainer
     document.querySelector('.performanceScreen').style.display = performanceScreen
@@ -325,7 +342,7 @@ function mapPracCourses(pracs,courses){
 function AssignCoursesPost(){
     ("courses assigned");
     document.getElementById('assignSpan').innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>';   
-    document.getElementById('submitButton').disabled = true;
+    document.getElementById('submitButton1').disabled = true;
     
     //Code for post call with selectedItemsList goes here
     
@@ -337,7 +354,7 @@ function AssignCoursesPost(){
         var myModalEl = document.getElementById('AssignCoursesModal');
         var modal = bootstrap.Modal.getInstance(myModalEl);
         modal.hide();
-        document.getElementById('submitButton').disabled = false;
+        document.getElementById('submitButton1').disabled = false;
         document.getElementById('assignSpan').innerHTML = "Assign";
     }, 1500);
 }
