@@ -254,22 +254,22 @@ let MapCourses = {
     assignCourses : function(){
         let warningText=document.getElementById('warningText')
         let modalWarning=document.querySelector('.modal-warning')
-        var myModal = new bootstrap.Modal(document.getElementById('AssignCoursesModal2'), {
+        var myModal2 = new bootstrap.Modal(document.getElementById('AssignCoursesModal2'), {
             keyboard: false
           })
         this.assignButton.addEventListener('click',()=>{
             if(this.selectedCourses.length==0){
                 modalWarning.style.display='block'
                warningText.innerHTML='Please select a Course first!'
-               myModal.hide()
+               myModal2.hide()
             }
             else if(selectedPractitioners.length==0){
                 modalWarning.style.display='block'
                 warningText.innerHTML='Please select a Practitioner first!'
-                myModal.hide()
+                myModal2.hide()
             }
             else{
-                myModal.show()
+                myModal2.show()
        
            let mappedobj= mapPracCourses(this.selectedCourses,selectedPractitioners)
            console.log(mappedobj)
@@ -339,23 +339,23 @@ function mapPracCourses(pracs,courses){
 //             }
 //         })
 //     }
-function AssignCoursesPost(){
+function AssignCoursesPost2(){
     ("courses assigned");
-    document.getElementById('assignSpan').innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>';   
+    document.getElementById('assignSpan2').innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>';   
     document.getElementById('submitButton1').disabled = true;
     
     //Code for post call with selectedItemsList goes here
     
     setTimeout(function() {
-        document.getElementById('assignSpan').innerHTML = "Assigned";
+        document.getElementById('assignSpan2').innerHTML = "Assigned";
     }, 500);
 
     setTimeout(function() {
-        var myModalEl = document.getElementById('AssignCoursesModal');
-        var modal = bootstrap.Modal.getInstance(myModalEl);
-        modal.hide();
+        var myModalE2 = document.getElementById('AssignCoursesModal2');
+        var modal2 = bootstrap.Modal.getInstance(myModalE2);
+        modal2.hide();
         document.getElementById('submitButton1').disabled = false;
-        document.getElementById('assignSpan').innerHTML = "Assign";
+        document.getElementById('assignSpan2').innerHTML = "Assign";
     }, 1500);
 }
 //filter courses on save checkbox
