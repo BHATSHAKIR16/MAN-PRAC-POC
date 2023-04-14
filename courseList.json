@@ -18,7 +18,7 @@
         "courseLang" : "English",
         "CPEcredits" : 3,
         "duration" : "5h",
-        "courseImage" : "assets/2822464-1579736809034-16x9.png",
+        "courseImage" : "assets/course-image3.jpg",
         "courseID" : 2001
     },
     {
@@ -29,7 +29,7 @@
         "courseLang" : "English",
         "CPEcredits" : 3,
         "duration" : "5h",
-        "courseImage" : "assets/2822464-1579736809034-16x9.png",
+        "courseImage" : "assets/course-img5.jpg",
         "courseID" : 2002
     },
     {
@@ -40,7 +40,7 @@
         "courseLang" : "English",
         "CPEcredits" : 3,
         "duration" : "5h",
-        "courseImage" : "assets/2822464-1579736809034-16x9.png",
+        "courseImage" : "assets/course-image4.jpg",
         "courseID" : 2003
     },
     {
@@ -62,7 +62,7 @@
         "courseLang" : "English",
         "CPEcredits" : 4,
         "duration" : "6h",
-        "courseImage" : "assets/2822464-1579736809034-16x9.png",
+        "courseImage" : "assets/course-img5.jpg",
         "courseID" : 2005
       }
 ]

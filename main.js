@@ -231,9 +231,11 @@ function pinSelectedPrac(event,tagname){
             return selectedPracs
         }
 }
+
 let MapCourses = {
     savedCourses : [],
     selectedCourses : [],
+    mappedobj : {},
     assignButton : document.getElementById('assignbutton'),
     selectCourses : function(){
         this.selectedCourses = []
@@ -271,8 +273,8 @@ let MapCourses = {
             else{
                 myModal2.show()
        
-           let mappedobj= mapPracCourses(this.selectedCourses,selectedPractitioners)
-           console.log(mappedobj)
+           this.mappedobj= mapPracCourses(this.selectedCourses,selectedPractitioners)
+           console.log(this.mappedobj)
             }
             setTimeout(() => {
                 modalWarning.style.display='none'
@@ -343,6 +345,39 @@ function AssignCoursesPost2(){
     ("courses assigned");
     document.getElementById('assignSpan2').innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>';   
     document.getElementById('submitButton1').disabled = true;
+    let tableDataHolder = document.getElementById('tableDataHolder')
+    let tableTr = document.getElementById('tableTr');
+    let mappedCourses = JSON.parse(JSON.stringify(MapCourses.mappedobj))
+   
+    let pracKeys= Object.keys(mappedCourses).map(Number)
+    let courseKeys = Object.values(mappedCourses)
+    const firstCourseKey = courseKeys[0].map(Number)
+    const filteredPracIDs=pracData.filter((item,index)=>
+        item.ID==pracKeys[index])
+    const filteredCourseIDs = courseData.filter((item,index)=>item.courseID==firstCourseKey[index])  
+    let filteredPracNames=filteredPracIDs.map(el=>el.name)
+    let filteredCourseNames = filteredCourseIDs.map(el=>el.courseTitle) 
+    console.log(courseKeys)
+    console.log(filteredCourseIDs)
+    console.log(filteredPracNames)
+    console.log(filteredCourseNames)
+    for(let pracName of filteredPracNames){
+        // const courseIDs = mappedCourses[pracIDs]
+        let tdPrac = document.createElement('td')
+        tdPrac.innerHTML=pracName
+       let clonedPracTd=tdPrac.cloneNode(true)
+       let clonedTr=tableTr.cloneNode(true)   
+       clonedTr.appendChild(clonedPracTd)
+        for(let course of filteredCourseNames){
+            let tdCourse = document.createElement('td')
+            tdCourse.innerHTML=course
+            const clonedTd=tdCourse.cloneNode(true)
+            // tableTr.appendChild(clonedTd)
+            clonedTr.appendChild(clonedTd)
+            tableDataHolder.appendChild(clonedTr)
+            
+        }     
+    }
     
     //Code for post call with selectedItemsList goes here
     
@@ -351,12 +386,20 @@ function AssignCoursesPost2(){
     }, 500);
 
     setTimeout(function() {
-        var myModalE2 = document.getElementById('AssignCoursesModal2');
-        var modal2 = bootstrap.Modal.getInstance(myModalE2);
-        modal2.hide();
+        var myModalEl = document.getElementById('AssignCoursesModal2');
+        var modal = bootstrap.Modal.getInstance(myModalEl);
+        modal.hide();
         document.getElementById('submitButton1').disabled = false;
         document.getElementById('assignSpan2').innerHTML = "Assign";
     }, 1500);
+    setTimeout(() => {
+        document.querySelector('.disp-assigned-courses').style.display='block'
+        document.querySelector('.backdrop').style.display='block'
+    },2000);
+}
+function toggleTable(){
+    document.querySelector('.disp-assigned-courses').style.display='none'
+    document.querySelector('.backdrop').style.display='none'
 }
 //filter courses on save checkbox
  document.getElementById('checkSaved').addEventListener('change',(event)=>{
@@ -395,7 +438,8 @@ parentDropdown.style.border='1px solid white'
     
  }
 
+   MapCourses.assignCourses()
    MapCourses.selectCourses();
     pinSelectedPracMaster();
      saveCourses();
-   MapCourses.assignCourses();
+  

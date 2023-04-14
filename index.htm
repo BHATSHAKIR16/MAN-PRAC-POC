@@ -80,30 +80,32 @@
 
                 <div class="searchFilter">
                     <p class='courseHeading'>Suggested courses</p>
+                    <div class="filter-section">
+                        <div class="filter-section-inner" onclick="toggleFilDropdown(this)">
+                            <p>Filter courses</p>
+                            <button class="course-filter"><img src="assets/filterIcon.svg" height="18" width="18"></button>
+                            <!-- <span></span>
+                            <span>></span> -->
+                        </div>
+                        <div class="filter-dropdown">
+                            <h5>Filters</h5>
+                            <button onclick="closeDropdown()">&#x2715;</button>
+                            <input type="checkbox" id="checkSaved">
+                            <label for="checkSaved">Saved Course</label><br>
+                            <input type="checkbox" id="checkDuration">
+                            <label for="checkDuration">Course duration</label><br>
+                            <input type="checkbox" id="checkRecommendation">
+                            <label for="checkRecommendation">Course Recommendation</label>
+                        </div>
+                    </div>
                     <form class="form-class">
                         <button id="courseSearchBtn"><img src='assets/searchVector.svg'
                                 style="filter:opacity(0.7)"></button>
                         <input type="text" placeholder="Search Courses" id="courseField">
                     </form>
+                   
                 </div>
-                <div class="filter-section">
-                    <div class="filter-section-inner" onclick="toggleFilDropdown(this)">
-                        <p>Filter courses</p>
-                        <button class="course-filter"><img src="assets/filterIcon.svg" height="18" width="18"></button>
-                        <!-- <span></span>
-                        <span>></span> -->
-                    </div>
-                    <div class="filter-dropdown">
-                        <h5>Filters</h5>
-                        <button onclick="closeDropdown()">&#x2715;</button>
-                        <input type="checkbox" id="checkSaved">
-                        <label for="checkSaved">Saved Course</label><br>
-                        <input type="checkbox" id="checkDuration">
-                        <label for="checkDuration">Course duration</label><br>
-                        <input type="checkbox" id="checkRecommendation">
-                        <label for="checkRecommendation">Course Recommendation</label>
-                    </div>
-                </div>
+              
 
 
                 <div class="no-results" id='noResults'>
@@ -223,20 +225,25 @@
                     </div>
                 </div>
             </div>
-            <!-- <div class="disp-assigned-courses">
-                <h5>Assigned courses</h5>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Practitioner</th>
-                            <th>Course</th>
+            <div class = "backdrop">
+                <div class="disp-assigned-courses">
+                    <h5>Assigned courses</h5>
+                    <button onclick="toggleTable()">&#x2715;</button>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Practitioners</th>
+                                <th>Courses</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableDataHolder">
+                        <tr id = "tableTr">
                         </tr>
-                    </thead>
-                    <tbody>
-                    
-                    </tbody>
-                </table>
-            </div> -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+           
             <div class="modal-warning">
                 <p id="warningText">please select a Practitioner!</p>
             </div>
