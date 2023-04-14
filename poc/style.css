@@ -102,3 +102,17 @@ h3 {
     font-family: 'Open Sans';
     line-height: 24px
 }
+.modal-warning2{
+    display: none;
+    position: absolute;
+    background-color: #ab2727;
+    width: 20%;
+    /* height: 5%; */
+    bottom: -6%;
+    left: 37%;
+    padding: 0.5rem;
+    border-radius: 2px;
+    z-index: 2;
+    text-align: center;
+    transform: translate(50px, -50px);
+}

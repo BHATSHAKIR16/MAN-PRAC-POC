@@ -48,8 +48,8 @@ function AssignCoursesPost(){
         }, 500);
     
         setTimeout(function() {
-            var myModalEl = document.getElementById('AssignCoursesModal');
-            var modal = bootstrap.Modal.getInstance(myModalEl);
+            var myModalE1 = document.getElementById('AssignCoursesModal');
+            var modal = bootstrap.Modal.getInstance(myModalE1);
             modal.hide();
             document.getElementById('submitButton').disabled = false;
             document.getElementById('assignSpan').innerHTML = "Assign";
@@ -61,23 +61,26 @@ let checkSelection = {
     assignButton2 : document.getElementById('assignbutton2'),
      showExceptionModal: function(){
         this.assignButton2.addEventListener('click',()=>{
-            let warningText=document.getElementById('warningText')
-            let modalWarning=document.querySelector('.modal-warning')
+            let warningText2=document.getElementById('warningText2')
+            let modalWarning2=document.querySelector('.modal-warning2')
+            var myModal = new bootstrap.Modal(document.getElementById('AssignCoursesModal'))
+            
+    console.log(selectedItemsList);
 
             if(selectedItemsList.length==0){
-                modalWarning.style.display='block'
-               warningText.innerHTML='Please select a Course first!' 
+                modalWarning2.style.display='block'
+               warningText2.innerHTML='Please select a Course first!' 
+               console.log(selectedItemsList);
             }
             else if(selectedPractitioners.length==0){
-                modalWarning.style.display='block'
-                warningText.innerHTML='Please select a Practitioner first!'
+                modalWarning2.style.display='block'
+                warningText2.innerHTML='Please select a Practitioner first!'
             }
             else{
-                var myModal = new bootstrap.Modal(document.getElementById('AssignCoursesModal'))
                myModal.toggle();
             }
             setTimeout(() => {
-                modalWarning.style.display = "none"
+                modalWarning2.style.display = "none"
             }, 2000);
         })
         
